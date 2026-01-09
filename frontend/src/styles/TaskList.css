@@ -1,0 +1,178 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #e1e5e9;
+  transition: background-color 0.2s ease;
+  background: white;
+}
+
+.task-item:hover {
+  background: #f8f9fa;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item.completed {
+  opacity: 0.8;
+}
+
+.task-content {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.task-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-description {
+  margin: 0 0 12px 32px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.task-item.completed .task-description {
+  color: #aaa;
+}
+
+.task-meta {
+  display: flex;
+  gap: 15px;
+  margin-left: 32px;
+  flex-wrap: wrap;
+}
+
+.task-date {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-edit,
+.btn-delete {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-edit:hover {
+  background: #bbdefb;
+  transform: scale(1.1);
+}
+
+.btn-delete {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.btn-delete:hover {
+  background: #ffcdd2;
+  transform: scale(1.1);
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.no-tasks p {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .task-actions {
+    align-self: flex-end;
+  }
+  
+  .task-description {
+    margin-left: 0;
+  }
+  
+  .task-meta {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-item {
+    padding: 15px;
+  }
+  
+  .task-title {
+    font-size: 16px;
+  }
+  
+  .task-description {
+    font-size: 14px;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
